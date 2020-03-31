@@ -7,7 +7,8 @@ class App extends React.Component {
     super();
 
     this.state = {
-      movies: moviesData
+      movies: moviesData,
+      moviewWillWatch: []
     }
 
     //this.removeMovie = this.removeMovie.bind(this); - if removeMovie is not '=>' function
@@ -20,12 +21,30 @@ class App extends React.Component {
     this.setState({ movies: updateMovies });
   }
 
+  addMovieToWillWatch = (movie) => {
+    const updateWillWatch = [...this.state.moviewWillWatch, movie];
+    this.setState({ moviewWillWatch: updateWillWatch });
+  }
+
   render() {
-    return <div>
-      {this.state.movies.map((movie) => {
-        return <MovieItem key={movie.id} movie={movie} removeMovie={this.removeMovie} />
-      })}
-    </div>;
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-9">
+            <div className="row">
+              {this.state.movies.map((movie) => {
+                return (<div className="col-6 mb-4" key={movie.id}>
+                  <MovieItem movie={movie} removeMovie={this.removeMovie} addMovieToWillWatch={this.addMovieToWillWatch} />
+                </div>);
+              })}
+            </div>
+          </div>
+          <div className="col-3">
+            <p>Will Watch: {this.state.moviewWillWatch.length}</p>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 
