@@ -10,7 +10,9 @@ class App extends React.Component {
     this.state = {
       movies: [],
       moviesWillWatch: [],
-      sort_by: "revenue.desc"
+      page: 1,
+      pagesTotal: 1,
+      sort_by: "popularity.desc"
     }
 
     //this.removeMovie = this.removeMovie.bind(this); - if removeMovie is not '=>' function
@@ -21,16 +23,16 @@ class App extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.sort_by !== this.state.sort_by) {
+    if (prevState.sort_by !== this.state.sort_by || prevState.page !== this.state.page) {
       this.getMovies();
     }
   }
 
   getMovies = () => {
-    fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}`).then((response) => {
+    fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}&page=${this.state.page}`).then((response) => {
       return response.json()
     }).then((data) => {
-      this.setState({ movies: data.results })
+      this.setState({ movies: data.results, pagesTotal: data.total_pages })
     })
   }
 
@@ -59,6 +61,18 @@ class App extends React.Component {
     })
   }
 
+  nextPage = () => {
+    this.setState({
+      page: this.state.page + 1
+    })
+  }
+
+  previousPage = () => {
+    this.setState({
+      page: this.state.page - 1
+    })
+  }
+
   render() {
     return (
       <div className="container">
@@ -79,6 +93,25 @@ class App extends React.Component {
           </div>
           <div className="col-3">
             <p>Will Watch: {this.state.moviesWillWatch.length}</p>
+          </div>
+        </div>
+        <div className="row mt-4">
+          <div className="col-9">
+            <div className="row mb-4">
+              <div className="col-4" style={{textAlign: "left"}}>
+              {this.state.page > 1 ? (
+                  <button onClick={this.previousPage}>PREVIOUS</button>
+              ) : ""}
+              </div>
+              <div className="col-4" style={{textAlign: "center"}}>
+                {this.state.page} / {this.state.pagesTotal}
+              </div>
+              <div className="col-4" style={{textAlign: "right"}}>
+              {this.state.page !== this.state.pagesTotal ? (
+                  <button onClick={this.nextPage}>NEXT</button>
+              ) : ""}
+              </div>
+            </div>
           </div>
         </div>
       </div>
