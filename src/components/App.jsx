@@ -57,6 +57,7 @@ class App extends React.Component {
 
   updateSortBy = value => {
     this.setState({
+      page: 1,
       sort_by: value
     })
   }
