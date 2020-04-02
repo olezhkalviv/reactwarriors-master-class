@@ -1,10 +1,12 @@
 ## Майстер-клас. Перший додаток на ReactJS
 
-Для запуску необхідно встановити node.js та yarn.
+Необхідно встановити node.js (https://nodejs.org/) та yarn (https://yarnpkg.com/).
 
-Використовуючи cmd.exe навігуємось в папку з репозиторієм та виконуємо команду yarn start.
+Команди необхідно виконувати через Command Line, попередньо перейшовши у папку з репозиторієм.
 
-За деякий час додаток буде доступним за адресом http://localhost:3000.
+Щоб запустити:
+- yarn start
+- за деякий час додаток буде доступним за посиланням http://localhost:3000
 
 Щоб оновити пакети:
 - yarn upgrade
@@ -13,5 +15,6 @@
 - yarn build
 
 Щоб розмістити на GitHub Pages:
-- змінити homepage на власну сторінку
+- змінити значення "homepage" в "package.json" на власне посилання
 - yarn deploy
+- відкрити власне посилання (https://olezhkalviv.github.io/reactwarriors-master-class/)
