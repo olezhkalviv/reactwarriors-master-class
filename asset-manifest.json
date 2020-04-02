@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/reactwarriors-master-class/static/css/main.5d937b94.chunk.css",
+    "main.js": "/reactwarriors-master-class/static/js/main.620e94eb.chunk.js",
+    "main.js.map": "/reactwarriors-master-class/static/js/main.620e94eb.chunk.js.map",
+    "runtime-main.js": "/reactwarriors-master-class/static/js/runtime-main.05aedc1f.js",
+    "runtime-main.js.map": "/reactwarriors-master-class/static/js/runtime-main.05aedc1f.js.map",
+    "static/css/2.de424728.chunk.css": "/reactwarriors-master-class/static/css/2.de424728.chunk.css",
+    "static/js/2.57abb275.chunk.js": "/reactwarriors-master-class/static/js/2.57abb275.chunk.js",
+    "static/js/2.57abb275.chunk.js.map": "/reactwarriors-master-class/static/js/2.57abb275.chunk.js.map",
+    "index.html": "/reactwarriors-master-class/index.html",
+    "precache-manifest.9d7c32f36271146d5e4106130c373faf.js": "/reactwarriors-master-class/precache-manifest.9d7c32f36271146d5e4106130c373faf.js",
+    "service-worker.js": "/reactwarriors-master-class/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/reactwarriors-master-class/static/css/2.de424728.chunk.css.map",
+    "static/css/main.5d937b94.chunk.css.map": "/reactwarriors-master-class/static/css/main.5d937b94.chunk.css.map",
+    "static/js/2.57abb275.chunk.js.LICENSE.txt": "/reactwarriors-master-class/static/js/2.57abb275.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.05aedc1f.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.57abb275.chunk.js",
+    "static/css/main.5d937b94.chunk.css",
+    "static/js/main.620e94eb.chunk.js"
+  ]
+}
