@@ -13,5 +13,5 @@
 - yarn build
 
 Щоб розмістити на GitHub Pages:
-- yarn add gh-pages -D
 - змінити homepage на власну сторінку
+- yarn deploy
